@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from catalog.models import Product, Category, Version
 from myblog.models import Myblog
+from sending.models import Client
 
 
 # Register your models here.
@@ -26,3 +27,8 @@ class MyblogAdmin(admin.ModelAdmin):
 @admin.register(Version)
 class VersionAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
+
+
+@admin.register(Client)
+class VersionAdmin(admin.ModelAdmin):
+    list_display = ("id", "email", "fio", "comment")

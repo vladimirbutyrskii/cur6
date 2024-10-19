@@ -28,15 +28,17 @@ class Mailing(models.Model):
         null=True,
     )
 
-    periodicity = models.CharField(max_length=10,
-                                   verbose_name="Периодичность",
-                                   help_text="Введите периодичность рассылки",
-                                   )
+    periodicity = models.CharField(
+        max_length=10,
+        verbose_name="Периодичность",
+        help_text="Введите периодичность рассылки",
+    )
 
-    status = models.CharField(max_length=10,
-                              verbose_name="Статус",
-                              help_text="Введите статус рассылки",
-                              )
+    status = models.CharField(
+        max_length=10,
+        verbose_name="Статус",
+        help_text="Введите статус рассылки",
+    )
 
     class Meta:
         verbose_name = "Рассылка"
@@ -47,14 +49,16 @@ class Mailing(models.Model):
 
 
 class Message(models.Model):
-    subject = models.CharField(max_length=10,
-                               verbose_name="Тема письма",
-                               help_text="Введите тему письма",
-                               )
+    subject = models.CharField(
+        max_length=10,
+        verbose_name="Тема письма",
+        help_text="Введите тему письма",
+    )
 
-    body = models.TextField(verbose_name="Тело письма",
-                            help_text="Введите текст письма",
-                            )
+    body = models.TextField(
+        verbose_name="Тело письма",
+        help_text="Введите текст письма",
+    )
 
     class Meta:
         verbose_name = "Сообщение для рассылки"
@@ -72,10 +76,11 @@ class Attempt(models.Model):
         null=True,
     )
 
-    status = models.CharField(max_length=10,
-                              verbose_name="Статус",
-                              help_text="Введите статус попытки",
-                              )
+    status = models.CharField(
+        max_length=10,
+        verbose_name="Статус",
+        help_text="Введите статус попытки",
+    )
 
     server_response = models.CharField(
         verbose_name="Ответ почтового сервера",
@@ -88,4 +93,3 @@ class Attempt(models.Model):
 
     def __str__(self):
         return self.status
-

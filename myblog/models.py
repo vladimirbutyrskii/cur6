@@ -6,7 +6,7 @@ class Myblog(models.Model):
         help_text="Введите заголовок",
     )
 
-    slug = models.CharField(max_length=150, verbose_name="Slug", null=True, blank=True)
+    slug = models.CharField(max_length=151, verbose_name="Slug", null=True, blank=True)
     body = models.TextField(verbose_name="Содержимое", help_text="Введите текст поста")
     preview = models.ImageField (
         upload_to="myblog/photo",
