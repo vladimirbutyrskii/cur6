@@ -187,7 +187,9 @@
                 <p class="lead text-body-secondary">Чтобы клиенты не забывали</p>
                 {% if user.is_authenticated %}
                 <p>
-                    <a class="btn btn-primary" href="{% url 'sending:client_create' %}" role="button">Создать клиента</a>
+                    {% if sending.models.Client %}
+                        <a class="btn btn-primary" href="{% url 'sending:create_client' %}" role="button">Создать клиента</a>
+                    {% endif %}
                 </p>
                 {% endif %}
             </div>
