@@ -5,6 +5,11 @@ from users.views import UserCreateView, email_verification, reset_password
 
 app_name = UsersConfig.name
 
+"""<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit">Log Out</button>
+</form>"""
+
 urlpatterns = [
     path('login/', LoginView.as_view(template_name="login.html"), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),

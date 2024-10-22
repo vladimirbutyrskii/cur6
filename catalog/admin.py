@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from catalog.models import Product, Category, Version
 from myblog.models import Myblog
-from sending.models import Client, Mailing
+from sending.models import Client, Mailing, Message
 
 
 # Register your models here.
@@ -35,5 +35,10 @@ class ClientAdmin(admin.ModelAdmin):
 
 
 @admin.register(Mailing)
-class ClientAdmin(admin.ModelAdmin):
+class MailingAdmin(admin.ModelAdmin):
     list_display = ("id", "date_time", "periodicity", "status")
+
+
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ("id", "subject", "body")

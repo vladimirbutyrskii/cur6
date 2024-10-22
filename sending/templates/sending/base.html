@@ -180,22 +180,6 @@
 
 <main>
 
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Рассылка писем</h1>
-                <p class="lead text-body-secondary">Чтобы клиенты не забывали</p>
-                {% if user.is_authenticated %}
-                <p>
-                    {% if sending.models.Client %}
-                        <a class="btn btn-primary" href="{% url 'sending:create_client' %}" role="button">Создать клиента</a>
-                    {% endif %}
-                </p>
-                {% endif %}
-            </div>
-        </div>
-    </section>
-
     {% block content %}
     {% endblock %}
 </main>

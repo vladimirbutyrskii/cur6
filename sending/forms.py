@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.forms import ModelForm, BooleanField
 
-from sending.models import Client, Mailing
+from sending.models import Client, Mailing, Message
 
 
 class StyleFormMixin:
@@ -19,7 +19,14 @@ class ClientForm(StyleFormMixin, ModelForm):
         model = Client
         fields = '__all__'
 
+
 class MailingForm(StyleFormMixin, ModelForm):
     class Meta:
         model = Mailing
+        fields = '__all__'
+
+
+class MessageForm(StyleFormMixin, ModelForm):
+    class Meta:
+        model = Message
         fields = '__all__'
